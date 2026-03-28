@@ -5,7 +5,7 @@ import requests
 import datetime
 
 # 🔐 CONFIG (IMPORTANT: Fix your repo URL)
-TOKEN = st.secrets["TOKEN"]
+GITHUB_TOKEN = "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"
 USERNAME = "HotWheels-gtx-97"
 REPO = "Shop"
 FILE_PATH = "products.json"
@@ -18,7 +18,7 @@ AVAILABILITY = ["in-stock", "low-stock", "sold-out"]
 def load_data():
     try:
         url = f"https://api.github.com/repos/HotWheels-gtx-97/Shop/contents/products.json"
-        headers = {"Authorization": f"token {TOKEN}"}
+        headers = {"Authorization": f"token {GITHUB_TOKEN}"}
 
         res = requests.get(url, headers=headers)
         data = res.json()
@@ -37,7 +37,7 @@ def load_data():
 def push_data(products, sha):
     try:
         url = f"https://api.github.com/repos/HotWheels-gtx-97/Shop/contents/products.json"
-        headers = {"Authorization": f"token {TOKEN}"}
+        headers = {"Authorization": f"token {GITHUB_TOKEN}"}
 
         new_json = json.dumps({"products": products}, indent=4)
         encoded = base64.b64encode(new_json.encode()).decode()
