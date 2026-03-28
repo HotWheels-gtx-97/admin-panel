@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <span id="status" class="unsaved">⚠ Unsaved</span>
+    <button onclick="syncData()">Send ▶</button>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-container">
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Image URL</th>
+          <th>Info</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- FORM -->
+  <div class="form">
+
+    <label>Name</label>
+    <input id="name">
+
+    <label>Price</label>
+    <input id="price">
+
+    <label>Category</label>
+    <select id="category">
+      <option>bestseller</option>
+      <option>mostwanted</option>
+      <option>limited</option>
+      <option>newarrival</option>
+      <option>rare</option>
+      <option>giftset</option>
+    </select>
+
+    <label>Availability</label>
+    <select id="availability">
+      <option>in-stock</option>
+      <option>low-stock</option>
+      <option>sold-out</option>
+    </select>
+
+    <label>Image URL</label>
+    <input id="img">
+
+    <label>Info</label>
+    <input id="info">
+
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="buttons">
+    <button onclick="clearInputs()">New</button>
+    <button onclick="addItem()">Add</button>
+    <button onclick="updateItem()">Update</button>
+    <button onclick="deleteItem()">Delete</button>
+    <button onclick="moveUp()">⬆</button>
+    <button onclick="moveDown()">⬇</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

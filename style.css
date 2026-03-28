@@ -1,0 +1,55 @@
+body {
+  font-family: Arial;
+  background: #eee;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+  background: #ddd;
+  padding: 10px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.unsaved {
+  color: orange;
+  font-weight: bold;
+}
+
+.table-container {
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #aaa;
+  padding: 6px;
+}
+
+tr:hover {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.form input, select {
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 5px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
