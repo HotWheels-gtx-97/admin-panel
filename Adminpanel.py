@@ -21,7 +21,18 @@ def load_data():
         headers = {"Authorization": f"token {GITHUB_TOKEN}"}
 
         res = requests.get(url, headers=headers)
+
+        # 🔍 DEBUG PRINT
+        st.write("Status Code:", res.status_code)
+        st.write("Response:", res.json())
+
+        if res.status_code != 200:
+            raise Exception(res.json().get("message", "Unknown error"))
+
         data = res.json()
+
+        if "content" not in data:
+            raise Exception("No 'content' key → check repo/file path")
 
         content = base64.b64decode(data["content"]).decode()
         json_data = json.loads(content)
